@@ -135,6 +135,7 @@ class ResponseSet extends BaseResponse implements \Iterator, \Countable
     /**
      * @return int
      */
+    #[\ReturnTypeWillChange]
     public function count()
     {
         return count($this->_bulkResponses);

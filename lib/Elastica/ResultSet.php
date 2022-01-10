@@ -289,6 +289,7 @@ class ResultSet implements \Iterator, \Countable, \ArrayAccess
      *
      * @return bool true on success or false on failure
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->_results[$offset]);
@@ -305,6 +306,7 @@ class ResultSet implements \Iterator, \Countable, \ArrayAccess
      *
      * @return Result
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         if ($this->offsetExists($offset)) {
@@ -324,6 +326,7 @@ class ResultSet implements \Iterator, \Countable, \ArrayAccess
      *
      * @throws Exception\InvalidException
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (!($value instanceof Result)) {
@@ -344,6 +347,7 @@ class ResultSet implements \Iterator, \Countable, \ArrayAccess
      *
      * @param int $offset
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->_results[$offset]);
