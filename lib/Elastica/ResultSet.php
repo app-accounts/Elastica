@@ -239,6 +239,7 @@ class ResultSet implements \Iterator, \Countable, \ArrayAccess
      *
      * @return \Elastica\Result Set object
      */
+    #[\ReturnTypeWillChange]
     public function current()
     {
         return $this->_results[$this->key()];
@@ -247,6 +248,7 @@ class ResultSet implements \Iterator, \Countable, \ArrayAccess
     /**
      * Sets pointer (current) to the next item of the set.
      */
+    #[\ReturnTypeWillChange]
     public function next()
     {
         ++$this->_position;
@@ -257,6 +259,7 @@ class ResultSet implements \Iterator, \Countable, \ArrayAccess
      *
      * @return int Current position
      */
+    #[\ReturnTypeWillChange]
     public function key()
     {
         return $this->_position;
@@ -267,6 +270,7 @@ class ResultSet implements \Iterator, \Countable, \ArrayAccess
      *
      * @return bool True if object exists
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return isset($this->_results[$this->key()]);
@@ -275,6 +279,7 @@ class ResultSet implements \Iterator, \Countable, \ArrayAccess
     /**
      * Resets position to 0, restarts iterator.
      */
+    #[\ReturnTypeWillChange]
     public function rewind()
     {
         $this->_position = 0;

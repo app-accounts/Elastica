@@ -82,11 +82,13 @@ class ResultSet implements \Iterator, \ArrayAccess, \Countable
     /**
      * @return \Elastica\ResultSet
      */
+    #[\ReturnTypeWillChange]
     public function current()
     {
         return $this->_resultSets[$this->key()];
     }
 
+    #[\ReturnTypeWillChange]
     public function next()
     {
         ++$this->_position;
@@ -95,6 +97,7 @@ class ResultSet implements \Iterator, \ArrayAccess, \Countable
     /**
      * @return int
      */
+    #[\ReturnTypeWillChange]
     public function key()
     {
         return $this->_position;
@@ -103,11 +106,13 @@ class ResultSet implements \Iterator, \ArrayAccess, \Countable
     /**
      * @return bool
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return isset($this->_resultSets[$this->key()]);
     }
 
+    #[\ReturnTypeWillChange]
     public function rewind()
     {
         $this->_position = 0;
